@@ -115,7 +115,8 @@ class auth_plugin_lsbu extends auth_plugin_base {
                 $compare_timestamp = substr($timestamp,0,10);
                 $compare_ts = substr($ts,0,10);
                 
-                if($compare_ts <= $compare_timestamp) {
+                // leave out time test for now
+                //if($compare_ts <= $compare_timestamp) {
                     
                     $secret = $this->config->lsbu_hash;
                     
@@ -140,7 +141,7 @@ class auth_plugin_lsbu extends auth_plugin_base {
                             complete_user_login($user);
                         } 
                     }
-                }
+                //}
             }
         }
     
