@@ -1,0 +1,27 @@
+<?php
+
+global $CFG;
+// Set to defaults if undefined
+if (!isset($config->lsbu_hash)) {
+    $config->lsbu_hash = '';
+}
+?>
+<table cellspacing="0" cellpadding="5" border="0">
+<tr>
+   <td colspan="2">
+       <h4><?php print_string('auth_lsbu_settings', 'auth_lsbu') ?></h4>
+   </td>
+</tr>
+<tr valign="top" class="required">
+    <td align="right">
+        <label for="host_url"><?php print_string('auth_lsbu_hash_key', 'auth_lsbu') ?></label>
+    </td>
+    <td>
+        <input name="lsbu_hash" id="lsbu_hash" type="text" size="100" value="<?php echo $config->lsbu_hash?>" />
+        <?php if (isset($err['lsbu_hash'])) { echo $OUTPUT->error_text($err['lsbu_hash']); } ?>
+    </td>
+    <td>
+        <?php print_string('auth_lsbu_hash', 'auth_lsbu') ?>
+    </td>
+</tr>
+</table>
